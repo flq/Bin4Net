@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bin4Net", "Bin4Net\Bin4Net.csproj", "{B1866DC9-C4FE-4746-9787-F12B9182A5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bin4Net.Publish", "Bin4Net.Publish\Bin4Net.Publish.csproj", "{93A14F30-EB6D-468A-BEA5-D24CA3DC9CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bin4Net.Tests", "Bin4Net.Tests\Bin4Net.Tests.csproj", "{A6B8794F-F79B-44E9-B859-B1F0334BF031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bin4Net.PublishCLI", "Bin4Net.PublishCLI\Bin4Net.PublishCLI.csproj", "{AA127A96-2B91-41A9-BD7D-1E2AFE79376A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1866DC9-C4FE-4746-9787-F12B9182A5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1866DC9-C4FE-4746-9787-F12B9182A5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1866DC9-C4FE-4746-9787-F12B9182A5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1866DC9-C4FE-4746-9787-F12B9182A5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A14F30-EB6D-468A-BEA5-D24CA3DC9CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A14F30-EB6D-468A-BEA5-D24CA3DC9CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A14F30-EB6D-468A-BEA5-D24CA3DC9CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A14F30-EB6D-468A-BEA5-D24CA3DC9CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B8794F-F79B-44E9-B859-B1F0334BF031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B8794F-F79B-44E9-B859-B1F0334BF031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B8794F-F79B-44E9-B859-B1F0334BF031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B8794F-F79B-44E9-B859-B1F0334BF031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA127A96-2B91-41A9-BD7D-1E2AFE79376A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA127A96-2B91-41A9-BD7D-1E2AFE79376A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA127A96-2B91-41A9-BD7D-1E2AFE79376A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA127A96-2B91-41A9-BD7D-1E2AFE79376A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

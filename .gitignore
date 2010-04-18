@@ -1,0 +1,11 @@
+obj
+bin
+out
+_ReSharper.*
+*.user
+*.resharper
+*.suo
+*.cache
+*.~
+*.swp
+*.zip
