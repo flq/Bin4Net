@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consuming\Downloader.cs" />
+    <Compile Include="Consuming\IBinRepository.cs" />
+    <Compile Include="Consuming\RepositoryItem.cs" />
     <Compile Include="Frame\AppDomainExpander.cs" />
     <Compile Include="Frame\DomainLifetimeHook.cs" />
     <Compile Include="Publishing\EmptyBinException.cs" />
