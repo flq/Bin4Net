@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   public class ExecutionContext
   {

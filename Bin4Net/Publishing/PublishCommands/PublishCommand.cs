@@ -1,7 +1,6 @@
 using System;
-using System.Runtime.Serialization;
 
-namespace Bin4Net.PublishCommands
+namespace Bin4Net.Publishing.PublishCommands
 {
   public abstract class PublishCommand
   {

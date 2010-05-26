@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading;
+using Bin4Net.Publishing;
 using Bin4Net.Tests.CompileScenarios;
 using Bin4Net.Tests.Util;
 using NUnit.Framework;

@@ -1,5 +1,6 @@
-using Bin4Net.Inlets;
-using Bin4Net.PublishCommands;
+using Bin4Net.Publishing;
+using Bin4Net.Publishing.Inlets;
+using Bin4Net.Publishing.PublishCommands;
 using Bin4Net.Tests.CompileScenarios;
 using NUnit.Framework;
 using Bin4Net.Tests.Util;

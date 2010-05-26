@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
-using Bin4Net.Inlets;
-using Bin4Net.Publish;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   /// <summary>
   /// Start point to the publishing process

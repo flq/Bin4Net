@@ -13,7 +13,9 @@ namespace Bin4Net.Publish
     /// <param name="metadata">Provide a method that accepts a <see cref="IMetadataInlet"/></param>
     /// <returns></returns>
     IPublisher SetupMetadata(Action<IMetadataInlet> metadata);
+
     IPublisher DependsOn(params string[] dependencies);
+
     /// <summary>
     /// Specify the Url under which your bin will be available. If your bin consists of several files, 
     /// you should specify the folder that contains them. If you prefer providing your bin as a single zip, specify the 

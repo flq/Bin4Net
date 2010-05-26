@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Bin4Net.PublishCommands;
+using Bin4Net.Publishing.PublishCommands;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   internal interface IPublishCommands : IEnumerable<PublishCommand>
   {

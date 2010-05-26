@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Bin4Net.PublishCommands
+namespace Bin4Net.Publishing.PublishCommands
 {
   internal class DataFromAssemblyCommand : PublishCommand
   {

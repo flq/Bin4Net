@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Runtime.Serialization;
 using MonoTorrent.BEncoding;
 using MonoTorrent.Common;
 using System.Linq;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   public class PublishedSeed
   {
@@ -44,8 +43,8 @@ namespace Bin4Net
         torrentName = value;
         if (!Path.HasExtension(torrentName))
           torrentName += ".torrent";
-        if (!Path.IsPathRooted(torrentName))
-          Path.Combine(Environment.CurrentDirectory, torrentName);
+        //if (!Path.IsPathRooted(torrentName))
+        //  torrentName += Path.Combine(Environment.CurrentDirectory, torrentName);
       }
     }
 

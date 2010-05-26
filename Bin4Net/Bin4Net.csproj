@@ -46,26 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppDomainExpander.cs" />
-    <Compile Include="DomainLifetimeHook.cs" />
-    <Compile Include="EmptyBinException.cs" />
-    <Compile Include="ExecutionContext.cs" />
-    <Compile Include="PublishCommands\AddWebSeedCommand.cs" />
-    <Compile Include="PublishCommands\TagSetupCommand.cs" />
-    <Compile Include="IPublishCommands.cs" />
-    <Compile Include="Inlets\MetadataInlet.cs" />
-    <Compile Include="PublishCommands\CommandExecutionException.cs" />
-    <Compile Include="PublishCommands\DataFromAssemblyCommand.cs" />
-    <Compile Include="EntryPointFinder.cs" />
-    <Compile Include="EntryPointNotFoundException.cs" />
-    <Compile Include="PublishCommands\PublishCommand.cs" />
-    <Compile Include="Publisher.cs" />
+    <Compile Include="Frame\AppDomainExpander.cs" />
+    <Compile Include="Frame\DomainLifetimeHook.cs" />
+    <Compile Include="Publishing\EmptyBinException.cs" />
+    <Compile Include="Publishing\ExecutionContext.cs" />
+    <Compile Include="Publishing\PublishCommands\AddWebSeedCommand.cs" />
+    <Compile Include="Publishing\PublishCommands\TagSetupCommand.cs" />
+    <Compile Include="Publishing\IPublishCommands.cs" />
+    <Compile Include="Publishing\Inlets\MetadataInlet.cs" />
+    <Compile Include="Publishing\PublishCommands\CommandExecutionException.cs" />
+    <Compile Include="Publishing\PublishCommands\DataFromAssemblyCommand.cs" />
+    <Compile Include="Publishing\EntryPointFinder.cs" />
+    <Compile Include="Publishing\EntryPointNotFoundException.cs" />
+    <Compile Include="Publishing\PublishCommands\PublishCommand.cs" />
+    <Compile Include="Publishing\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PublishingOptions.cs" />
-    <Compile Include="Inlets\PublishInlet.cs" />
-    <Compile Include="PublishedSeed.cs" />
-    <Compile Include="PublishProcess.cs" />
-    <Compile Include="StringFormatExtension.cs" />
+    <Compile Include="Publishing\PublishingOptions.cs" />
+    <Compile Include="Publishing\Inlets\PublishInlet.cs" />
+    <Compile Include="Publishing\PublishedSeed.cs" />
+    <Compile Include="Publishing\PublishProcess.cs" />
+    <Compile Include="Frame\StringFormatExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bin4Net.Publish\Bin4Net.Publish.csproj">

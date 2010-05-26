@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.IO;
 using Bin4Net.Publish;
+using Bin4Net.Publishing;
 using Bin4Net.Tests.CompileScenarios;
 using Bin4Net.Tests.Util;
 using Moq;
 using NUnit.Framework;
+using EntryPointNotFoundException = Bin4Net.Publishing.EntryPointNotFoundException;
 
 namespace Bin4Net.Tests
 {

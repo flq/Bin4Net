@@ -1,4 +1,4 @@
-namespace Bin4Net.PublishCommands
+namespace Bin4Net.Publishing.PublishCommands
 {
   internal class TagSetupCommand : PublishCommand
   {

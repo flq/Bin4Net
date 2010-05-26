@@ -1,5 +1,6 @@
 using System;
-using Bin4Net.PublishCommands;
+using Bin4Net.Publishing;
+using Bin4Net.Publishing.PublishCommands;
 using Bin4Net.Tests.CompileScenarios;
 
 namespace Bin4Net.Tests.Util

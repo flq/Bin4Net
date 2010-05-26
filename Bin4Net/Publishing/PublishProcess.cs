@@ -1,7 +1,7 @@
 using System;
-using Bin4Net.Inlets;
+using Bin4Net.Publishing.Inlets;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   internal class PublishProcess : DomainLifetimeHook
   {

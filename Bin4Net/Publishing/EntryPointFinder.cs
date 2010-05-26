@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Bin4Net.Publish;
 
-namespace Bin4Net
+namespace Bin4Net.Publishing
 {
   public class EntryPointFinder
   {

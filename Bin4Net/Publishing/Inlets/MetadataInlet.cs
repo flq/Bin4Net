@@ -1,8 +1,7 @@
-using System;
 using Bin4Net.Publish;
-using Bin4Net.PublishCommands;
+using Bin4Net.Publishing.PublishCommands;
 
-namespace Bin4Net.Inlets
+namespace Bin4Net.Publishing.Inlets
 {
   internal class MetadataInlet : IMetadataInlet
   {
