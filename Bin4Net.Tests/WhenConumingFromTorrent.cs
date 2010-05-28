@@ -6,7 +6,7 @@ using System.Linq;
 namespace Bin4Net.Tests
 {
   [TestFixture]
-  public class WhenTheDownloaderDownloadsFromTorrent : AssemblyServicing
+  public class WhenConumingFromTorrent : AssemblyServicing
   {
     [TestFixtureSetUp]
     public void Given()

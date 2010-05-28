@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using MonoTorrent.Client;
 
 namespace Bin4Net.Consuming
 {
@@ -16,7 +18,10 @@ namespace Bin4Net.Consuming
     /// </summary>
     public void GetBin(string torrentFile)
     {
-      
+      if (!File.Exists(torrentFile))
+          throw new ArgumentException("torrent " + torrentFile + " could not be found for loading.");
+        var engine = new ClientEngine(new EngineSettings());
+
     }
 
     /// <summary>

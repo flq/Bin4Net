@@ -10,6 +10,7 @@ namespace Bin4Net.Tests.AssemblyArtefacts
         .SetupMetadata(m=> m
                              .FromAssemblyAttributes()
                              .AssociateWithTags("tool", "acme"))
+        .Versioning(v=>v.VersionOfThisAssembly())
         .DownloadUnder("http://localhost:8889/");
     }
   }

@@ -6,7 +6,7 @@ namespace Bin4Net.Tests.Util
 {
   public class TestingBinRepository : IBinRepository
   {
-    public IEnumerable<RepositoryItem> Get(string acmeInc)
+    public Bin Get(string binPath)
     {
       return null;
     }

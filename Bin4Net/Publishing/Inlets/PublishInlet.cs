@@ -7,62 +7,69 @@ using Bin4Net.Publishing.PublishCommands;
 
 namespace Bin4Net.Publishing.Inlets
 {
-  internal class PublishInlet : IPublisher, IPublishCommands
-  {
-    private readonly List<PublishCommand> commands = new List<PublishCommand>();
-
-    public IPublisher SetupMetadata(Action<IMetadataInlet> metadata)
+    internal class PublishInlet : IPublisher, IPublishCommands
     {
-      var i = new MetadataInlet(this);
-      metadata(i);
-      return this;
-    }
+        private readonly List<PublishCommand> commands = new List<PublishCommand>();
 
-    public IPublisher AssociateWithTags(params string[] tags)
-    {
-      Add(new TagSetupCommand(tags));
-      return this;
-    }
+        public IPublisher SetupMetadata(Action<IMetadataInlet> metadata)
+        {
+            var i = new MetadataInlet(this);
+            metadata(i);
+            return this;
+        }
 
-    public IPublisher DependsOn(params string[] dependencies)
-    {
-      return this;
-    }
+        public IPublisher Versioning(Action<IVersioningInlet> versioning)
+        {
+            var i = new VersioningInlet(this);
+            versioning(i);
+            return this;
+        }
 
-    public IPublisher DownloadUnder(string url)
-    {
-      Add(new AddWebSeedCommand(url));
-      return this;
-    }
+        public IPublisher AssociateWithTags(params string[] tags)
+        {
+            Add(new TagSetupCommand(tags));
+            return this;
+        }
 
-    ReadOnlyCollection<PublishCommand> IPublishCommands.Commands
-    {
-      get { return commands.AsReadOnly(); }
-    }
+        public IPublisher DependsOn(params string[] dependencies)
+        {
+            return this;
+        }
 
-    void IPublishCommands.Prepend(PublishCommand command)
-    {
-      commands.Insert(0, command);
-    }
+        public IPublisher DownloadUnder(string url)
+        {
+            Add(new AddWebSeedCommand(url));
+            return this;
+        }
 
-    void IPublishCommands.Append(PublishCommand command)
-    {
-      commands.Add(command);
-    }
+        ReadOnlyCollection<PublishCommand> IPublishCommands.Commands
+        {
+            get { return commands.AsReadOnly(); }
+        }
 
-    internal void Add(PublishCommand command)
-    {
-      commands.Add(command);
-    }
+        void IPublishCommands.Prepend(PublishCommand command)
+        {
+            commands.Insert(0, command);
+        }
 
-    IEnumerator<PublishCommand> IEnumerable<PublishCommand>.GetEnumerator()
-    {
-      return commands.GetEnumerator();
-    }
+        void IPublishCommands.Append(PublishCommand command)
+        {
+            commands.Add(command);
+        }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return ((IEnumerable<PublishCommand>)this).GetEnumerator();
+        internal void Add(PublishCommand command)
+        {
+            commands.Add(command);
+        }
+
+        IEnumerator<PublishCommand> IEnumerable<PublishCommand>.GetEnumerator()
+        {
+            return commands.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable<PublishCommand>)this).GetEnumerator();
+        }
     }
-  }
 }

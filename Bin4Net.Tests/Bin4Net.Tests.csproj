@@ -64,7 +64,7 @@
     <Compile Include="Util\TestingBinRepository.cs" />
     <Compile Include="Util\TestsCompiler.cs" />
     <Compile Include="Util\AssertExtensions.cs" />
-    <Compile Include="WhenTheDownloaderDownloadsFromTorrent.cs" />
+    <Compile Include="WhenConumingFromTorrent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bin4Net.Publish\Bin4Net.Publish.csproj">

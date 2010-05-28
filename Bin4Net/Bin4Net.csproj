@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consuming\Bin.cs" />
     <Compile Include="Consuming\Downloader.cs" />
     <Compile Include="Consuming\IBinRepository.cs" />
     <Compile Include="Consuming\RepositoryItem.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Frame\DomainLifetimeHook.cs" />
     <Compile Include="Publishing\EmptyBinException.cs" />
     <Compile Include="Publishing\ExecutionContext.cs" />
+    <Compile Include="Publishing\Inlets\VersioningInlet.cs" />
     <Compile Include="Publishing\PublishCommands\AddWebSeedCommand.cs" />
     <Compile Include="Publishing\PublishCommands\TagSetupCommand.cs" />
     <Compile Include="Publishing\IPublishCommands.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Publishing\EntryPointFinder.cs" />
     <Compile Include="Publishing\EntryPointNotFoundException.cs" />
     <Compile Include="Publishing\PublishCommands\PublishCommand.cs" />
+    <Compile Include="Publishing\PublishCommands\VersionFromAssemblyCommand.cs" />
     <Compile Include="Publishing\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publishing\PublishingOptions.cs" />
