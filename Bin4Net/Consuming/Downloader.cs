@@ -25,7 +25,7 @@ namespace Bin4Net.Consuming
             if (!File.Exists(torrentFile))
                 throw new ArgumentException("torrent " + torrentFile + " could not be found for loading.");
 
-            TorrentManager mgr = new TorrentManager(Torrent.lo);
+            //TorrentManager mgr = new TorrentManager(Torrent.lo);
         }
 
         /// <summary>

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consuming\Bin.cs" />
+    <Compile Include="Consuming\BinTorrent.cs" />
     <Compile Include="Consuming\Downloader.cs" />
     <Compile Include="Consuming\IBinRepository.cs" />
     <Compile Include="Consuming\RepositoryItem.cs" />
