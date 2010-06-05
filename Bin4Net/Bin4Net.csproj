@@ -50,11 +50,13 @@
     <Compile Include="Consuming\BinRootInfo.cs" />
     <Compile Include="Consuming\BinTorrent.cs" />
     <Compile Include="Consuming\Downloader.cs" />
+    <Compile Include="Consuming\FileBinRepository.cs" />
     <Compile Include="Consuming\IBinRepository.cs" />
     <Compile Include="Consuming\RepositoryItem.cs" />
     <Compile Include="Frame\AppDomainExpander.cs" />
     <Compile Include="Frame\DomainLifetimeHook.cs" />
     <Compile Include="Frame\TorrentEnvironment.cs" />
+    <Compile Include="Frame\TorrentUtilities.cs" />
     <Compile Include="Publishing\EmptyBinException.cs" />
     <Compile Include="Publishing\ExecutionContext.cs" />
     <Compile Include="Publishing\Inlets\VersioningInlet.cs" />

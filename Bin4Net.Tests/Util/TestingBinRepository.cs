@@ -1,33 +1,20 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Bin4Net.Consuming;
-using MonoTorrent.Client.PieceWriters;
 
 namespace Bin4Net.Tests.Util
 {
-    public class TestingBinRepository : IBinRepository, IDisposable
+    public class TestingBinRepository : FileBinRepository, IDisposable
     {
-        private readonly string root;
 
         public TestingBinRepository()
+            : base(Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()))
         {
-            var tmp = Path.GetTempPath();
-            var dir = Path.GetRandomFileName();
-            root = Path.Combine(tmp, dir);
-            Directory.CreateDirectory(root);
         }
-
-        public Bin Get(string binPath)
-        {
-            return null;
-        }
-
-        public string Root { get { return root; } }
 
         public void Dispose()
         {
-            Directory.Delete(root, true);
+            Directory.Delete(Root, true);
         }
     }
 }

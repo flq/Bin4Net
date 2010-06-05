@@ -5,6 +5,7 @@ using System.Threading;
 using MonoTorrent.BEncoding;
 using MonoTorrent.Client;
 using MonoTorrent.Common;
+using Bin4Net.Frame;
 
 namespace Bin4Net.Consuming
 {
@@ -34,11 +35,9 @@ namespace Bin4Net.Consuming
             if (handle != null)
                 currentHandle = handle;
 
-            BinTorrent bt;
-            using (var s = File.OpenRead(torrentFile))
-            {
-                bt = new BinTorrent(BEncodedDictionary.DecodeTorrent(s));
-            }
+            BinTorrent bt = torrentFile.AsBinTorrent();
+            binRepository.Put(bt);
+            
             download(bt);
         }
 

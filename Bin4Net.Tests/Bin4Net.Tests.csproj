@@ -56,7 +56,6 @@
     <Compile Include="AssemblyArtefacts\EntryPoint1.cs" />
     <Compile Include="AssemblyArtefacts\EntryPoint2.cs" />
     <Compile Include="CompileScenarios\AssemblyWithSingleDownload.cs" />
-    <Compile Include="IntegrationTests.cs" />
     <Compile Include="TorrentDownloading.cs" />
     <Compile Include="Util\AssemblyServicing.cs" />
     <Compile Include="Util\CommandTester.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Util\TestingBinRepository.cs" />
     <Compile Include="Util\TestsCompiler.cs" />
     <Compile Include="Util\AssertExtensions.cs" />
-    <Compile Include="WhenConsumingFromTorrent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bin4Net.Publish\Bin4Net.Publish.csproj">

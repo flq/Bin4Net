@@ -13,5 +13,10 @@ namespace Bin4Net.Consuming
       /// The root of the repository
       /// </summary>
       string Root { get; }
+
+      /// <summary>
+      /// Places the torrent at its correct location
+      /// </summary>
+      void Put(BinTorrent bt);
   }
 }
