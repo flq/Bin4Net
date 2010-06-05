@@ -44,7 +44,7 @@ namespace Bin4Net.Tests
         public void WebSeedsAreIntroducedCorrectly()
         {
             var cT = new CommandTester()
-              .UsingAssemblyFrom<AssemblyWithDownload>()
+              .UsingAssemblyFrom<AssemblyWithSingleDownload>()
               .Test(new AddWebSeedCommand("http://localhost:80"));
             cT.Seed.WebSeeds.ShouldHaveCount(1);
         }
@@ -53,7 +53,7 @@ namespace Bin4Net.Tests
         public void VersioningIsAddedCorrectly()
         {
             var cT = new CommandTester()
-              .UsingAssemblyFrom<AssemblyWithDownload>()
+              .UsingAssemblyFrom<AssemblyWithSingleDownload>()
               .Test(new VersionFromAssemblyCommand());
             cT.Seed.Version.ShouldBeEqualTo("1.0.0.0");
         }

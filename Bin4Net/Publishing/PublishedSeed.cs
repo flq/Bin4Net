@@ -13,9 +13,10 @@ namespace Bin4Net.Publishing
         private readonly TorrentCreator torrent;
 
         private string torrentName;
+        private readonly string pathToContent;
         private string publisher;
         private string copyright;
-        private string name;
+        private string product;
         private readonly List<string> webSeeds = new List<string>();
         private string version;
 
@@ -24,10 +25,10 @@ namespace Bin4Net.Publishing
         public PublishedSeed(string torrentName, string pathToContent)
         {
             torrent = new TorrentCreator();
-            torrent.Announces.Add(new List<string> { "http://tracker.openbittorrent.com/announce" });
+            //torrent.Announces.Add(new List<string> { "http://tracker.openbittorrent.com/announce" });
             torrent.CreatedBy = "Bin4Net";
             this.torrentName = torrentName;
-            torrent.Path = pathToContent;
+            this.pathToContent = pathToContent;
         }
 
 
@@ -72,16 +73,16 @@ namespace Bin4Net.Publishing
             }
         }
 
-        public string Name
+        public string Product
         {
             get
             {
-                return name;
+                return product;
             }
             set
             {
-                name = value;
-                torrent.AddCustom(new BEncodedString("uniquename"), new BEncodedString(name));
+                product = value;
+                torrent.AddCustom(new BEncodedString("product"), new BEncodedString(product));
             }
         }
 
@@ -107,13 +108,13 @@ namespace Bin4Net.Publishing
 
         public void Finish()
         {
-            if (string.IsNullOrEmpty(torrent.Path))
+            if (string.IsNullOrEmpty(pathToContent))
                 throw new EmptyBinException("The path to the bin is not set");
             if (webSeeds.Count == 1)
                 torrent.AddCustom(new BEncodedString("url-list"), new BEncodedString(webSeeds[0]));
             else if (webSeeds.Count > 1)
                 torrent.AddCustom(new BEncodedString("url-list"), new BEncodedList(webSeeds.Select(s => new BEncodedString(s)).ToArray()));
-            torrent.Create(torrentName);
+            torrent.Create(new TorrentFileSource(pathToContent), torrentName);
         }
     }
 }

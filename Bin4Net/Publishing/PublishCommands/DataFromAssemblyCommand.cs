@@ -13,7 +13,7 @@ namespace Bin4Net.Publishing.PublishCommands
           { typeof(AssemblyTitleAttribute), (s, a) => s.TorrentName = ((AssemblyTitleAttribute)a).Title },
           { typeof(AssemblyCompanyAttribute), (s, a) => s.Publisher = ((AssemblyCompanyAttribute)a).Company },
           { typeof(AssemblyCopyrightAttribute), (s, a) => s.Copyright = ((AssemblyCopyrightAttribute)a).Copyright },
-          { typeof(AssemblyProductAttribute), (s, a) => s.Name = ((AssemblyProductAttribute)a).Product }
+          { typeof(AssemblyProductAttribute), (s, a) => s.Product = ((AssemblyProductAttribute)a).Product }
         };
 
     protected override void execute()

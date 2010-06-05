@@ -1,4 +1,6 @@
+using System;
 using System.IO;
+using System.Threading;
 using Bin4Net.Consuming;
 using Bin4Net.Tests.Util;
 using MonoTorrent.BEncoding;
@@ -13,19 +15,8 @@ namespace Bin4Net.Tests
         [TestFixtureSetUp]
         public void Given()
         {
-            setUpWebServerAndAssembly();
+            setUpAssembly();
             createTorrent("test.torrent");
-        }
-
-        [Test]
-        public void TheDownloaderObtainsTheCorrectFiles()
-        {
-            var binRep = new TestingBinRepository();
-            var d = new Downloader(binRep);
-            d.GetBin("test.torrent");
-            var binContents = binRep.Get("acme inc./acme stuff/1.0.0.0").ToList();
-            binContents.ShouldHaveCount(1);
-            binContents[0].PhysicalName.ShouldBeEqualTo("myAssembly.dll");
         }
 
         [Test]
@@ -38,6 +29,8 @@ namespace Bin4Net.Tests
             }
             t.ShouldNotBeNull();
             t.Version.ShouldBeEqualTo("1.0.0.0");
+            t.Publisher.ShouldBeEqualTo("acme inc.");
+            t.Product.ShouldBeEqualTo("acme stuff");
         }
 
     }

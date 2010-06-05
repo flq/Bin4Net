@@ -8,7 +8,7 @@ namespace Bin4Net.Tests.Util
 {
     public class TestingBinRepository : IBinRepository, IDisposable
     {
-        private string root;
+        private readonly string root;
 
         public TestingBinRepository()
         {

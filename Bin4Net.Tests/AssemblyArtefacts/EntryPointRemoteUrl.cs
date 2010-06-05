@@ -2,7 +2,7 @@ using Bin4Net.Publish;
 
 namespace Bin4Net.Tests.AssemblyArtefacts
 {
-  public class EntryPoint3
+  public class EntryPointRemoteUrl
   {
     public static void Bin4Net(IPublisher publisher)
     {
@@ -11,7 +11,7 @@ namespace Bin4Net.Tests.AssemblyArtefacts
                              .FromAssemblyAttributes()
                              .AssociateWithTags("tool", "acme"))
         .Versioning(v=>v.VersionOfThisAssembly())
-        .DownloadUnder("http://localhost:8889/");
+        .DownloadUnder("http://realfiction.net/bin4net/single/testAssembly.dll");
     }
   }
 }

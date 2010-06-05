@@ -25,6 +25,7 @@ namespace Bin4Net.PublishCLI
       try
       {
         options.Parse(args);
+        
         if (showHelp)
         {
           options.WriteOptionDescriptions(Console.Out);
