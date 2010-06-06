@@ -1,19 +1,25 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Bin4Net.Publishing
 {
-  public class EntryPointNotFoundException : Exception
-  {
-    public EntryPointNotFoundException()
-    {
-    }
 
-    public EntryPointNotFoundException(string message) : base(message)
+    [Serializable]
+    public class EntryPointNotFoundException : Exception
     {
-    }
 
-    public EntryPointNotFoundException(string message, Exception inner) : base(message, inner)
-    {
+        public EntryPointNotFoundException(string message) : base(message)
+        {
+        }
+
+        public EntryPointNotFoundException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
+        protected EntryPointNotFoundException(
+            SerializationInfo info,
+            StreamingContext context) : base(info, context)
+        {
+        }
     }
-  }
 }

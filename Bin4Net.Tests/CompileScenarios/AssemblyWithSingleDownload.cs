@@ -4,7 +4,7 @@ namespace Bin4Net.Tests.CompileScenarios
   {
     protected override System.Collections.Generic.IEnumerable<string> addFiles()
     {
-        return (new AttributesOnly() + "EntryPointRemoteUrl.cs").FilesToCompile;
+        return (new AttributesOnly() + "EntryPointWithSingleItem.cs").FilesToCompile;
     }
   }
 }

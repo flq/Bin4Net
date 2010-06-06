@@ -8,8 +8,20 @@ namespace Bin4Net.Tests.Util
     public class PublishServeConsumeIntegration
     {
         private string assemblyFileName = "testAssembly.dll";
-        private readonly string servePath = Path.Combine(Environment.CurrentDirectory, "dwnld");
-        
+        private readonly string contentPath;
+
+        public PublishServeConsumeIntegration() : this("dwnld")
+        {
+            
+        }
+
+        public PublishServeConsumeIntegration(string contentPath)
+        {
+            this.contentPath = Path.Combine(Environment.CurrentDirectory, contentPath);
+            if (!Directory.Exists(contentPath))
+                Directory.CreateDirectory(contentPath);
+        }
+
         public PublishServeConsumeIntegration SetAssemblyName(string assemblyName)
         {
             assemblyFileName = assemblyName;
@@ -23,23 +35,21 @@ namespace Bin4Net.Tests.Util
 
         public PublishServeConsumeIntegration CreateAssembly<T>() where T : CompileScenario, new()
         {
-            if (!Directory.Exists(servePath))
-                Directory.CreateDirectory(servePath);
 
             var c = new TestsCompiler()
-              .StoreAssemblyAs(Path.Combine(servePath, assemblyFileName))
+              .StoreAssemblyAs(Path.Combine(contentPath, assemblyFileName))
               .With<T>();
 
             return this;
         }
 
-        public PublishServeConsumeIntegration CreateTorrent(string torrentName)
+        public PublishServeConsumeIntegration CreateTorrent(string torrentName, bool useSingleAssembly)
         {
             var p = new Publisher(
                 new PublishingOptions
                     {
-                        Content = Path.Combine(servePath, assemblyFileName),
-                        PathToAssembly = Path.Combine(servePath, assemblyFileName),
+                        Content = useSingleAssembly ? Path.Combine(contentPath, assemblyFileName) : contentPath,
+                        PathToAssembly = Path.Combine(contentPath, assemblyFileName),
                         TorrentName = torrentName,
                         RunInSeparateAppDomain = true
                     });

@@ -24,7 +24,7 @@ namespace Bin4Net.Tests
         [ExpectedException(typeof(EntryPointNotFoundException))]
         public void MultipleEntryPointsThrow()
         {
-            var c = new TestsCompiler().With(new AttributeAndEntryPoint() + "EntryPoint2.cs");
+            var c = new TestsCompiler().With(new MultiEntryPoint() + "EntryPoint2.cs");
             new Publisher(new PublishingOptions(c.Assembly));
         }
 

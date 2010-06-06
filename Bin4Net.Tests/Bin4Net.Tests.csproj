@@ -51,15 +51,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AssemblyArtefacts\AssemblyInfo1.cs" />
-    <None Include="torrents\test.torrent" />
-    <Compile Include="AssemblyArtefacts\EntryPointRemoteUrl.cs" />
+    <None Include="AssemblyArtefacts\AssemblyInfo2.cs" />
+    <None Include="torrents\multi.torrent" />
+    <None Include="torrents\single.torrent" />
+    <Compile Include="AssemblyArtefacts\EntryPointMultiFiles.cs" />
+    <Compile Include="AssemblyArtefacts\EntryPointWithSingleItem.cs" />
     <Compile Include="AssemblyArtefacts\EntryPoint1.cs" />
     <Compile Include="AssemblyArtefacts\EntryPoint2.cs" />
+    <Compile Include="AssemblyArtefacts\Utility.cs" />
     <Compile Include="CompileScenarios\AssemblyWithSingleDownload.cs" />
+    <Compile Include="CompileScenarios\AttributeAndEntryPoint.cs" />
     <Compile Include="TorrentDownloading.cs" />
     <Compile Include="Util\AssemblyServicing.cs" />
     <Compile Include="Util\CommandTester.cs" />
-    <Compile Include="CompileScenarios\AttributeAndEntryPoint.cs" />
+    <Compile Include="CompileScenarios\MultiEntryPoint.cs" />
     <Compile Include="CompileScenarios\AttributesOnly.cs" />
     <Compile Include="CompileScenarios\CompileScenario.cs" />
     <Compile Include="PublishProcessTests.cs" />

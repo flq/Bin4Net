@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using Bin4Net.Consuming;
 using MonoTorrent.Client;
+using MonoTorrent.Common;
 
 namespace Bin4Net
 {
@@ -20,7 +21,7 @@ namespace Bin4Net
         {
             //TODO: I suppose managers need to go once the torrent is finished, unless
             // the user wants to seed what he downloaded. We will see...
-            var m = new TorrentManager(bt.Torrent, bt.FullPath, new TorrentSettings() { });
+            var m = new TorrentManager(bt.Torrent, bt.FullPath, new TorrentSettings() { }, "");
             engine.Register(m);
             return m;
         }
