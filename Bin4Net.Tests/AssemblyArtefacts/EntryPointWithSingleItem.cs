@@ -11,7 +11,7 @@ namespace Bin4Net.Tests.AssemblyArtefacts
                              .FromAssemblyAttributes()
                              .AssociateWithTags("tool", "acme"))
         .Versioning(v=>v.VersionOfThisAssembly())
-        .DownloadUnder("http://realfiction.net/bin4net/single/testAssembly.dll");
+        .Download(d=>d.FixedLocation("http://realfiction.net/bin4net/single/testAssembly.dll"));
     }
   }
 }

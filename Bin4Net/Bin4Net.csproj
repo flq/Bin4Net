@@ -59,8 +59,10 @@
     <Compile Include="Frame\TorrentUtilities.cs" />
     <Compile Include="Publishing\EmptyBinException.cs" />
     <Compile Include="Publishing\ExecutionContext.cs" />
+    <Compile Include="Publishing\Inlets\DownloadInlet.cs" />
     <Compile Include="Publishing\Inlets\VersioningInlet.cs" />
     <Compile Include="Publishing\PublishCommands\AddWebSeedCommand.cs" />
+    <Compile Include="Publishing\IPublishCommand.cs" />
     <Compile Include="Publishing\PublishCommands\TagSetupCommand.cs" />
     <Compile Include="Publishing\IPublishCommands.cs" />
     <Compile Include="Publishing\Inlets\MetadataInlet.cs" />

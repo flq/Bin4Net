@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Bin4Net.Publishing
 {
-    public class PublishedSeed
+    public class PublishedSeed : IPublishCommand
     {
         private readonly TorrentCreator torrent;
 
@@ -26,7 +26,7 @@ namespace Bin4Net.Publishing
         {
             torrent = new TorrentCreator();
             //torrent.Announces.Add(new List<string> { "http://tracker.openbittorrent.com/announce" });
-            torrent.CreatedBy = "Bin4Net";
+            Torrent.CreatedBy = "Bin4Net";
             this.torrentName = torrentName;
             this.pathToContent = pathToContent;
         }
@@ -45,8 +45,16 @@ namespace Bin4Net.Publishing
                 torrentName = value;
                 if (!Path.HasExtension(torrentName))
                     torrentName += ".torrent";
-                //if (!Path.IsPathRooted(torrentName))
-                //  torrentName += Path.Combine(Environment.CurrentDirectory, torrentName);
+            }
+        }
+
+        public string Copyright
+        {
+            get { return copyright; }
+            set
+            {
+                copyright = value;
+                Torrent.AddCustom(new BEncodedString("copyright"), new BEncodedString(copyright));
             }
         }
 
@@ -59,17 +67,7 @@ namespace Bin4Net.Publishing
             set
             {
                 publisher = value;
-                torrent.Publisher = publisher;
-            }
-        }
-
-        public string Copyright
-        {
-            get { return copyright; }
-            set
-            {
-                copyright = value;
-                torrent.AddCustom(new BEncodedString("copyright"), new BEncodedString(torrentName));
+                Torrent.Publisher = publisher;
             }
         }
 
@@ -82,7 +80,7 @@ namespace Bin4Net.Publishing
             set
             {
                 product = value;
-                torrent.AddCustom(new BEncodedString("product"), new BEncodedString(product));
+                Torrent.AddCustom(new BEncodedString("product"), new BEncodedString(product));
             }
         }
 
@@ -102,19 +100,24 @@ namespace Bin4Net.Publishing
             set
             {
                 version = value;
-                torrent.AddCustom(new BEncodedString("version"), new BEncodedString(version));
+                Torrent.AddCustom(new BEncodedString("version"), new BEncodedString(version));
             }
         }
 
-        public void Finish()
+        public TorrentCreator Torrent
+        {
+            get { return torrent; }
+        }
+
+        public void Execute(ExecutionContext context)
         {
             if (string.IsNullOrEmpty(pathToContent))
                 throw new EmptyBinException("The path to the bin is not set");
             if (webSeeds.Count == 1)
-                torrent.AddCustom(new BEncodedString("url-list"), new BEncodedString(webSeeds[0]));
+                Torrent.AddCustom(new BEncodedString("url-list"), new BEncodedString(webSeeds[0]));
             else if (webSeeds.Count > 1)
-                torrent.AddCustom(new BEncodedString("url-list"), new BEncodedList(webSeeds.Select(s => new BEncodedString(s)).ToArray()));
-            torrent.Create(new TorrentFileSource(pathToContent), torrentName);
+                Torrent.AddCustom(new BEncodedString("url-list"), new BEncodedList(webSeeds.Select(s => new BEncodedString(s)).ToArray()));
+            Torrent.Create(new TorrentFileSource(pathToContent), torrentName);
         }
     }
 }

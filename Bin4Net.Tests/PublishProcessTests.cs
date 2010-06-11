@@ -36,7 +36,7 @@ namespace Bin4Net.Tests
             var cT = new CommandTester()
               .UsingAssemblyFrom<AttributesOnly>()
               .Test<DataFromAssemblyCommand>();
-            cT.Seed.TorrentName.ShouldBeEqualTo("foo.torrent");
+            cT.Seed.TorrentName.ShouldBeEqualTo("acme stuff.torrent");
             cT.Seed.Publisher.ShouldBeEqualTo("acme inc.");
         }
 

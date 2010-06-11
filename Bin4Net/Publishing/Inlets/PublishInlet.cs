@@ -9,7 +9,14 @@ namespace Bin4Net.Publishing.Inlets
 {
     internal class PublishInlet : IPublisher, IPublishCommands
     {
-        private readonly List<PublishCommand> commands = new List<PublishCommand>();
+        private readonly List<IPublishCommand> commands = new List<IPublishCommand>();
+
+        public IPublisher ApplyAutomaton<T>() where T : IPublisherAutomaton, new()
+        {
+            var a = new T();
+            a.Accept(this);
+            return this;
+        }
 
         public IPublisher SetupMetadata(Action<IMetadataInlet> metadata)
         {
@@ -25,44 +32,44 @@ namespace Bin4Net.Publishing.Inlets
             return this;
         }
 
+        public IPublisher DependsOn(Action<IDependencyInlet> dependencies)
+        {
+            return this;
+        }
+
+        public IPublisher Download(Action<IDownloadInlet> download)
+        {
+            download(new DownloadInlet(this));
+            return this;
+        }
+
         public IPublisher AssociateWithTags(params string[] tags)
         {
             Add(new TagSetupCommand(tags));
             return this;
         }
 
-        public IPublisher DependsOn(params string[] dependencies)
-        {
-            return this;
-        }
-
-        public IPublisher DownloadUnder(string url)
-        {
-            Add(new AddWebSeedCommand(url));
-            return this;
-        }
-
-        ReadOnlyCollection<PublishCommand> IPublishCommands.Commands
+        ReadOnlyCollection<IPublishCommand> IPublishCommands.Commands
         {
             get { return commands.AsReadOnly(); }
         }
 
-        void IPublishCommands.Prepend(PublishCommand command)
+        void IPublishCommands.Prepend(IPublishCommand command)
         {
             commands.Insert(0, command);
         }
 
-        void IPublishCommands.Append(PublishCommand command)
+        void IPublishCommands.Append(IPublishCommand command)
         {
             commands.Add(command);
         }
 
-        internal void Add(PublishCommand command)
+        internal void Add(IPublishCommand command)
         {
             commands.Add(command);
         }
 
-        IEnumerator<PublishCommand> IEnumerable<PublishCommand>.GetEnumerator()
+        IEnumerator<IPublishCommand> IEnumerable<IPublishCommand>.GetEnumerator()
         {
             return commands.GetEnumerator();
         }

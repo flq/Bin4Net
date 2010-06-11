@@ -1,19 +1,28 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Bin4Net.Publishing.PublishCommands
 {
-  public class CommandExecutionException : Exception
-  {
-    public CommandExecutionException()
+    [Serializable]
+    public class CommandExecutionException : Exception
     {
-    }
 
-    public CommandExecutionException(string message) : base(message)
-    {
-    }
+        public CommandExecutionException()
+        {
+        }
 
-    public CommandExecutionException(string message, Exception inner) : base(message, inner)
-    {
+        public CommandExecutionException(string message) : base(message)
+        {
+        }
+
+        public CommandExecutionException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
+        protected CommandExecutionException(
+            SerializationInfo info,
+            StreamingContext context) : base(info, context)
+        {
+        }
     }
-  }
 }

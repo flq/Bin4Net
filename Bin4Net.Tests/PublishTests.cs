@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Bin4Net.Publish;
 using Bin4Net.Publishing;
 using Bin4Net.Tests.CompileScenarios;
@@ -65,6 +66,24 @@ namespace Bin4Net.Tests
             var options = new PublishingOptions { PathToAssembly = "PublishingOptionsConvertsFileToAssembly.dll" };
             var ass = options.EntryAssembly;
             ass.ShouldNotBeNull();
+        }
+
+        [Test]
+        public void TheTorrentsDefaultNameIsTheProductName()
+        {
+            var c = new TestsCompiler()
+              .StoreAssemblyAs("defaultName.dll")
+              .With<AssemblyWithSingleDownload>();
+
+            string contentPath = Path.Combine(Environment.CurrentDirectory, "defaultName.dll");
+            var p = new Publisher(
+                new PublishingOptions
+                {
+                    Content = contentPath,
+                    PathToAssembly = contentPath,
+                    RunInSeparateAppDomain = true
+                });
+            File.Exists("acme stuff.torrent").ShouldBeTrue();
         }
     }
 }

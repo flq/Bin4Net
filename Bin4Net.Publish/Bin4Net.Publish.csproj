@@ -37,8 +37,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyDefinition.cs" />
     <Compile Include="IPublisher.cs" />
+    <Compile Include="IPublisherAutomaton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Standards.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
